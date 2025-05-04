@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4c9af88b6ce8eba1eb960151151e50e3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@master/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4c9af88b6ce8eba1eb960151151e50e3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4c9af88b6ce8eba1eb960151151e50e3 = L.map(
+                "map_4c9af88b6ce8eba1eb960151151e50e3",
+                {
+                    center: [41.2, -105.43],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_4c9af88b6ce8eba1eb960151151e50e3);
+
+            
+
+        
+    
+            var tile_layer_af1b26b9c26bc9dd617ea5d8b763c4eb = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Tiles \u00a9 Esri \u0026mdash; Source: USGS, NOAA", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_4c9af88b6ce8eba1eb960151151e50e3);
+        
+    
+            var heat_map_37baf006b410e4083c432cfd01698ae1 = L.heatLayer(
+                [[41.19243, -105.43494], [41.20378, -105.40731], [41.15998, -105.38677], [41.18662, -105.39806], [41.19305, -105.43834], [41.21303, -105.41484], [41.01144, -105.2342], [41.11982, -105.35056], [41.23026, -105.41412], [41.25483, -105.45773], [41.2473, -105.45038], [41.2485, -105.46087], [41.22141, -105.44762], [41.22202, -105.45367], [41.22204, -105.44562], [41.22463, -105.45898], [41.2243, -105.45137], [41.22569, -105.44857], [41.22911, -105.45282], [41.21994, -105.44582], [41.21959, -105.45606], [41.22373, -105.46143], [41.22196, -105.45831], [41.23034, -105.44757], [41.22479, -105.44124], [41.22066, -105.44194]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.3, "radius": 30}
+            ).addTo(map_4c9af88b6ce8eba1eb960151151e50e3);
+        
+    
+                var lat_lng_popup_963d620b1cddf0d9a55d46f774d51f84 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_963d620b1cddf0d9a55d46f774d51f84
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_4c9af88b6ce8eba1eb960151151e50e3);
+                    }
+                map_4c9af88b6ce8eba1eb960151151e50e3.on('click', latLngPop);
+            
+</script>
+</html>
